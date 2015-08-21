@@ -4,7 +4,7 @@ function dirDelResc(dir) {
         return false;
     }
     dir = dir.toString();
-    var cmd = java.lang.reflect.Array.newInstance(java.lang.Class.forName("java.lang.String"), 4);
+    var cmd = java.lang.reflect.Array.newInstance(java.lang.Class.forName("java.lang.String"), 3);
     cmd[0] = "rm";
     cmd[1] = "-rf";
     cmd[2] = dir;
