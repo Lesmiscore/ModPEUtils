@@ -81,3 +81,14 @@ class Music {
         return d;
     }
 };
+class Lang {
+    public static createJArray: Function = java.lang.reflect.Array.newInstance;
+    public static getJClass: Function = java.lang.Class.forName;
+    public static jsArrayToJArray(array: Array<Object>, jClass: any = Lang.getJClass("java.lang.Object")) {
+        var ja = Lang.createJArray(jClass, array.length);
+        for (var i = 0; i < array.length; i++) {
+            ja[i] = array[i];
+        }
+        return ja;
+    }
+};
