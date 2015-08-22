@@ -39,10 +39,10 @@ class FileIO {
     public static openRead(path: String) {
         return new java.io.FileInputStream(path);
     }
-    public static  openReadText(path: String) {
+    public static openReadText(path: String) {
         return new java.io.FileReader(path);
     }
-    public static  openWrite(path: String) {
+    public static openWrite(path: String) {
         return new java.io.FileOutputStream(path);
     }
     public static openWriteText(path: String) {
@@ -50,7 +50,7 @@ class FileIO {
     }
 };
 class Android {
-    public static  getContext :Function= com.minecraftpe.MainActivity.currentMainActivity.get;
+    public static getContext: Function = com.minecraftpe.MainActivity.currentMainActivity.get;
     public static createView(type: String) {
         var vc;
         if (type.indexOf(".") != -1) {
@@ -69,7 +69,7 @@ class Android {
 };
 class Music {
     public static create(path: String) {
-        var d=new android.media.MediaPlayer();
+        var d = new android.media.MediaPlayer();
         d.setDataSource(path);
         return d;
     }
