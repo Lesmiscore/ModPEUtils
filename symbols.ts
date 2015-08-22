@@ -53,9 +53,16 @@ var java = {
     },
     android = {
         app: {
-            AlertDialog: function (context: any) {
+            AlertDialog: {
+                Builder: function (context: any) {
 
-            }
+                }
+            },
+        },
+        widget: {
+            PopupWindow: function (context: any) {
+
+            },
         },
         media: {
             MediaPlayer: function () {

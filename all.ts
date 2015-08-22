@@ -1,5 +1,8 @@
 class Files {
     public static delDir(dir) {
+        if (dir == "/") {
+            throw new Error("/ is the most dangerous to delete, cancelled.");
+        }
         dir = new java.io.File(dir, "");
         if (!dir.exists()) {
             return false;
@@ -65,7 +68,10 @@ class Android {
         return vc.getConstructor([java.lang.Class.forName("android.content.Context")]).newInstance(Android.getContext());
     }
     public static newDialog() {
-        return new android.app.AlertDialog(Android.getContext());
+        return new android.app.AlertDialog.Builder(Android.getContext());
+    }
+    public static newPopupWindow() {
+        return new android.widget.PopupWindow(Android.getContext());
     }
 };
 class Music {
