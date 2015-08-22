@@ -92,3 +92,29 @@ class Lang {
         return ja;
     }
 };
+class BlockLauncher {
+    public static getBlocks(startX: number, startY: number, startZ: number, endX: number, endY: number, endZ: number) {
+        var actualStartX = Math.min(startX, endX);
+        var actualStartY = Math.min(startY, endY);
+        var actualStartZ = Math.min(startZ, endZ);
+
+        var actualEndX = Math.max(startX, endX);
+        var actualEndY = Math.max(startY, endY);
+        var actualEndZ = Math.max(startZ, endZ);
+
+        var result = [];
+        for (var x = actualStartX; x < actualEndX; x++) {
+            result[x - actualStartX] = [];
+            for (var y = actualStartY; y < actualEndY; y++) {
+                result[x - actualStartX][y - actualStartY] = [];
+                for (var z = actualStartZ; z < actualEndZ; z++) {
+                    result[x - actualStartX][y - actualStartY][z - actualStartZ] = {
+                        tileId: Level.getTile(x, y, z),
+                        tileDamage: Level.getData(x, y, z),
+                    }
+                }
+            }
+        }
+        return result;
+    }
+};
