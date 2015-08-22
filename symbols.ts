@@ -31,8 +31,8 @@ var java = {
         }
     },
     io: {
-        File: function (path: any, addition: String) {
-
+        File: function (path: any, addition: String = ""): __FileInternal {
+            return null;
         },
         FileInputStream: function (path: any) {
 
@@ -47,6 +47,15 @@ var java = {
 
         },
         ByteArrayOutputStream: function (capacity: number = 0) {
+
+        },
+        OutputStreamWriter: function (os: any) {
+
+        },
+        BufferedWriter: function (os: any) {
+
+        },
+        BufferedReader: function (is: any) {
 
         },
     },
@@ -84,4 +93,7 @@ var java = {
             }
         }
     };
+class __FileInternal {
+    public exists() { }
+}
 /*End Virtual Symbols*/
