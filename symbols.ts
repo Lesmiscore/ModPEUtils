@@ -16,6 +16,9 @@ var java = {
         ProcessBuilder: function () {
 
         },
+        Thread: function (delegate: Object) {
+
+        },
         reflect: {
             Array: {
                 newInstance: function (typeObj: any, length: number): any {

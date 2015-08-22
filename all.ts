@@ -84,12 +84,34 @@ class Music {
 class Lang {
     public static createJArray: Function = java.lang.reflect.Array.newInstance;
     public static getJClass: Function = java.lang.Class.forName;
+    public static cloneArray: Function = Lang.jArrayToJSArray;
     public static jsArrayToJArray(array: Array<Object>, jClass: any = Lang.getJClass("java.lang.Object")) {
         var ja = Lang.createJArray(jClass, array.length);
         for (var i = 0; i < array.length; i++) {
             ja[i] = array[i];
         }
         return ja;
+    }
+    public static jArrayToJSArray(array: Array<Object>) {
+        var ja = [];
+        for (var i = 0; i < array.length; i++) {
+            ja[i] = array[i];
+        }
+        return ja;
+    }
+    public static castArray(array: any, jClass: any = Lang.getJClass("java.lang.Object")) {
+        var ja = Lang.createJArray(jClass, array.length);
+        for (var i = 0; i < array.length; i++) {
+            ja[i] = array[i];
+        }
+        return ja;
+    }
+    public static newThread(delegate: Function) {
+        new java.lang.Thread({
+            run: function (): void {
+                delegate();
+            }
+        }).start();
     }
 };
 class BlockLauncher {
