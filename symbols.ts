@@ -19,6 +19,9 @@ var java = {
         Thread: function (delegate: Object) {
 
         },
+        Byte: {
+            TYPE: null,
+        },
         reflect: {
             Array: {
                 newInstance: function (typeObj: any, length: number): any {
@@ -43,6 +46,14 @@ var java = {
         FileWriter: function (path: any) {
 
         },
+        ByteArrayOutputStream: function (capacity: number = 0) {
+
+        },
+    },
+    net: {
+        URL: function (spec: String) {
+
+        }
     }
 },
     com = {

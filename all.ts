@@ -116,6 +116,29 @@ class Lang {
         return toReturn;
     }
 };
+class Network {
+    public static downloadAsync(address: String
+        , onSuccess: Function = function (address, data) { }
+        , onError: Function = function (address, reason) { }) {
+        Lang.newThread(function () {
+            try {
+                var data = new java.io.ByteArrayOutputStream();
+                var net = new java.net.URL(address).openConnection().getInputStream();
+                var buf = Lang.createJArray(java.lang.Byte.TYPE, 8000);
+                while (!0) {
+                    var d = net.read(buf);
+                    if (d == -1) {
+                        break;
+                    }
+                    data.write(buf,0,d);
+                }
+                onSuccess(address, data.toByteArray());
+            } catch (e) {
+                onError(address, { reason: "general error", error: e });
+            }
+        });
+    }
+}
 class BlockLauncher {
     public static getBlocks(startX: number, startY: number, startZ: number, endX: number, endY: number, endZ: number) {
         var actualStartX = Math.min(startX, endX);
