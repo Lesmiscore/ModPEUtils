@@ -23,6 +23,14 @@ var Files = {
         cmd[3] = dest.toString();
         new java.lang.ProcessBuilder().command(cmd).start().waitFor();
     },
+    move: function (from, dest) {
+        from = new java.io.File(from, "");
+        if (!from.exists()) {
+            return false;
+        }
+        dest = new java.io.File(dest, "");
+        from.renameTo(dest);
+    },
 };
 var FileIO = {
     openRead: function (path) {
@@ -54,4 +62,22 @@ var Android = {
                 }
         }
     },
-}
+};
+var Music = {
+    __internal: function (music) {
+        this.player = new android.media.MediaPlayer();
+        this.player.setDataSource(music);
+        this.play = function () {
+            this.player.play();
+        }
+        this.pause = function () {
+            this.player.pause();
+        }
+        this.isPlaying = function () {
+           return this.player.isPlaying();
+        }
+    },
+    create: function (path) {
+        return new this.__internal(path);
+    },
+};
