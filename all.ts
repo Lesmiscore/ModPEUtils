@@ -1,6 +1,3 @@
-/*Virtual Symbols*/
-var java, com, android;
-/*End Virtual Symbols*/
 class Files {
     public static delDir(dir) {
         dir = new java.io.File(dir, "");
@@ -65,6 +62,10 @@ class Android {
                 }
             }
         }
+        return vc.getConstructor([java.lang.Class.forName("android.content.Context")]).newInstance(Android.getContext());
+    }
+    public static newDialog() {
+        return new android.app.AlertDialog(Android.getContext());
     }
 };
 class Music {
