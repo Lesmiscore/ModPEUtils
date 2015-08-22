@@ -1,7 +1,7 @@
 class Files {
     public static delDir(dir) {
         if (dir == "/") {
-            throw new Error("/ is the most dangerous to delete, cancelled.");
+            throw new Error("\"/\" is the most dangerous to delete, cancelled.");
         }
         dir = new java.io.File(dir, "");
         if (!dir.exists()) {
