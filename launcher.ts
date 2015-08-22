@@ -6,54 +6,54 @@
  *DO NOT BE USED IN BLOCKLAUNCHER!
  *THIS CANNOT USE AS A MOD!
  */
-function addItemInventory(id, count, damageValue) { }
-function clientMessage(message) { }
-function explode(x, y, z, power) { }
-function getCarriedItem() { }
-function getLevel() { }
-function getPitch(degree) { }
-function getPlayerEnt() { }
-function getPlayerX() { }
-function getPlayerY() { }
-function getPlayerZ() { }
-function getTile(x, y, z) { }
-function getYaw(direction) { }
-function preventDefault() { }
-function print(message) { }
-function rideAnimal(target, destination) { }
-function setNightMode(time) { }
-function setPosition(entity, x, y, z) { }
-function setPositionRelative(entity, x, y, z) { }
-function setRot(entity, yAxis, direction) { }
-function setTile(x, y, z, id, damage) { }
-function setVelX(entity, speed) { }
-function setVelY(entity, speed) { }
-function setVelZ(entity, speed) { }
-function spawnChicken(x, y, z, skinPath) { }
-function spawnCow(x, y, z, skinPath) { }
-function spawnPigZombie(x, y, z, id, skinPath) { }
+function addItemInventory(id: number, count: number, damageValue: number): void { }
+function clientMessage(message: String): void { }
+function explode(x: number, y: number, z: number, power): void { }
+function getCarriedItem(): number { return 0; }
+function getLevel(): String { return ""; }
+function getPitch(degree: number): number { return 0; }
+function getPlayerEnt(): any { }
+function getPlayerX(): number { return 0; }
+function getPlayerY(): number { return 0; }
+function getPlayerZ(): number { return 0; }
+function getTile(x: number, y: number, z: number): number { return 0; }
+function getYaw(direction: number): number { return 0; }
+function preventDefault(): void { }
+function print(message: String): void { }
+function rideAnimal(target: any, destination: any): void { }
+function setNightMode(time: number): void { }
+function setPosition(entity: any, x: number, y: number, z: number): void { }
+function setPositionRelative(entity: any, x: number, y: number, z: number): void { }
+function setRot(entity: any, yAxis: number, direction: number): void { }
+function setTile(x: number, y: number, z: number, id: number, damage: number): void { }
+function setVelX(entity: any, speed: number): void { }
+function setVelY(entity: any, speed: number): void { }
+function setVelZ(entity: any, speed: number): void { }
+function spawnChicken(x: number, y: number, z: number, skinPath: String): void { }
+function spawnCow(x: number, y: number, z: number, skinPath: String): void { }
+function spawnPigZombie(x: number, y: number, z: number, id: number, skinPath: String): void { }
 var ModPE = {
-    getMinecraftVersion: function () { },
-    langEdit: function (before, after) { },
-    leaveGame: function () { },
-    log: function (message) { },
-    overrideTexture: function (target, address) { },
-    saveData: function (variable, data) { },
-    readData: function (variable) { },
-    removeData: function (variable) { },
-    resetFov: function () { },
-    resetImages: function () { },
-    selectLevel: function (name, directory, seed, gMode) { },
-    setCamera: function (entity) { },
-    setFoodItem: function (id, textureName, group, amount, name) { },
-    setFov: function (distance) { },
-    setGameSpeed: function (tickPerSec) { },
-    setItem: function (id, textureName, groupId, groupName, stackLimit) { },
-    setGuiBlocks: function (url) { },
-    setItems: function (url) { },
-    setTerrain: function (url) { },
-    showTipMessage: function (message) { },
-    takeScreenshot: function (message) { }
+    getMinecraftVersion: function (): String { return ""; },
+    langEdit: function (before: String, after: String) { },
+    leaveGame: function (): void { },
+    log: function (message: String): void { },
+    overrideTexture: function (target: String, address: String): void { },
+    saveData: function (variable: String, data: any) { },
+    readData: function (variable: String): void { },
+    removeData: function (variable: String): void { },
+    resetFov: function (): void { },
+    resetImages: function (): void { },
+    selectLevel: function (name: String, directoryname: String, seedname: String, gMode): void { },
+    setCamera: function (entity: any): void { },
+    setFoodItem: function (id: number, textureNamename: String, groupname: String, amount: number, namename: String): void { },
+    setFov: function (distance: number): void { },
+    setGameSpeed: function (tickPerSec: number): void { },
+    setItem: function (id: number, textureName: String, groupId: String, groupName: String, stackLimit: number): void { },
+    setGuiBlocks: function (url: String): void { },
+    setItems: function (url: String): void { },
+    setTerrain: function (url: String): void { },
+    showTipMessage: function (message: String): void { },
+    takeScreenshot: function (message: String): void { }
 }
 var Level = {
     addParticle: function (type, startX, startY, startZ, directionX, directionY, directionZ, size) { },
