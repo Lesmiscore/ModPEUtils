@@ -107,11 +107,13 @@ class Lang {
         return ja;
     }
     public static newThread(delegate: Function) {
-        new java.lang.Thread({
+        var toReturn;
+        (toReturn = new java.lang.Thread({
             run: function (): void {
                 delegate();
             }
-        }).start();
+        })).start();
+        return toReturn;
     }
 };
 class BlockLauncher {
