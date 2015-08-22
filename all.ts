@@ -7,7 +7,7 @@ class Files {
         if (!dir.exists()) {
             return false;
         }
-        var cmd = java.lang.reflect.Array.newInstance(java.lang.Class.forName("java.lang.String"), 3);
+        var cmd = Lang.createJArray(Lang.getJClass("java.lang.String"), 3);
         cmd[0] = "rm";
         cmd[1] = "-rf";
         cmd[2] = dir.toString();
@@ -19,7 +19,7 @@ class Files {
         if (!fromFile.exists()) {
             return false;
         }
-        var cmd = java.lang.reflect.Array.newInstance(java.lang.Class.forName("java.lang.String"), 4);
+        var cmd = Lang.createJArray(Lang.getJClass("java.lang.String"), 4);
         cmd[0] = "cp";
         cmd[1] = "-a";
         cmd[2] = from.toString();
@@ -54,7 +54,7 @@ class Android {
     public static createView(type: String) {
         var vc;
         if (type.indexOf(".") != -1) {
-            vc = java.lang.Class.forName(type);
+            vc = Lang.getJClass(type);
         } else {
             for (var i in (vc = ["android.view.", "android.widget."])) {
                 try {
@@ -65,7 +65,7 @@ class Android {
                 }
             }
         }
-        return vc.getConstructor([java.lang.Class.forName("android.content.Context")]).newInstance(Android.getContext());
+        return vc.getConstructor([Lang.getJClass("android.content.Context")]).newInstance(Android.getContext());
     }
     public static newDialog() {
         return new android.app.AlertDialog.Builder(Android.getContext());
