@@ -12,7 +12,13 @@ var java = {
 
             },
             getConstructor: function (types) { }
+        },
+        ProcessBuilder: function () {
+
         }
     }
 }, com, android;
+java.lang.ProcessBuilder.prototype.command = function (args) {
+    return this;
+}
 /*End Virtual Symbols*/
