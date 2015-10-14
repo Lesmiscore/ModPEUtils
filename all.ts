@@ -53,19 +53,15 @@ class Android {
     public static getContext: Function = com.minecraftpe.MainActivity.currentMainActivity.get;
     public static createView(type: String) {
         var vc;
-        if (type.indexOf(".") != -1) {
-            vc = Lang.getJClass(type);
-        } else {
-            for (var i in (vc = ["android.view.", "android.widget."])) {
-                try {
-                    vc = java.lang.Class.forName(vc[i] + type);
-                    break;
-                } catch (e) {
+        for (var i in (vc = ["android.view.", "android.widget."])) {
+            try {
+                return eval("new " + i + type + "(Android.getContext())");
+                break;
+            } catch (e) {
 
-                }
             }
         }
-        return vc.getConstructor([Lang.getJClass("android.content.Context")]).newInstance(Android.getContext());
+        return null;
     }
     public static newDialog() {
         return new android.app.AlertDialog.Builder(Android.getContext());
@@ -130,7 +126,7 @@ class Network {
                     if (d == -1) {
                         break;
                     }
-                    data.write(buf,0,d);
+                    data.write(buf, 0, d);
                 }
                 onSuccess(address, data.toByteArray());
             } catch (e) {

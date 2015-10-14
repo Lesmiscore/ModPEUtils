@@ -31,7 +31,7 @@ var java = {
         }
     },
     io: {
-        File: function (path: any, addition: String = ""): __FileInternal {
+        File: function (path: any, addition: String = ""): void {
             return null;
         },
         FileInputStream: function (path: any) {
@@ -56,6 +56,12 @@ var java = {
 
         },
         BufferedReader: function (is: any) {
+
+        },
+        DataOutputStream: function (os: any) {
+
+        },
+        DataInputStream: function (is: any) {
 
         },
     },
